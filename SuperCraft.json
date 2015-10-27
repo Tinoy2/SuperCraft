@@ -1,0 +1,72 @@
+{
+  "array": [
+    1,
+    2,
+    3
+  ],
+  "boolean": true,
+  "3d": true,
+  "number": 123,
+  "object": {
+    "a": "b",
+    "c": "d",
+    "e": "f"
+  },
+  "string": "Msg :Welcome Back %name%"
+}
+[
+  '{{repeat(5, 7)}}',
+  {
+    _id: '{{objectId()}}',
+    index: '{{index()}}',
+    guid: '{{guid()}}',
+    isActive: '{{bool()}}',
+    picture: 'http://placehold.it/32x32',
+    age: '{{integer(20, 40)}}',
+    eyeColor: '{{random("blue", "brown", "green")}}',
+    name: '{{firstName()}} {{surname()}}',
+    gender: '{{gender(male)}}',
+    company: '{{company().toUpperCase()}}',
+    email: '{{email()}}',
+    phone: '+1 {{phone()}}',
+    address: '{{integer(100, 999)}} {{street()}}, {{city()}}, {{state()}}, {{integer(100, 10000)}}',
+    about: '{{lorem(1, "paragraphs")}}',
+    registered: '{{date(new Date(2014, 0, 1), new Date(), "YYYY-MM-ddThh:mm:ss Z")}}',
+    latitude: '{{floating(-90.000001, 90)}}',
+    longitude: '{{floating(-180.000001, 180)}}',
+    tags: [
+      '{{repeat(7)}}',
+      '{{lorem(1, "words")}}'
+    ],
+    friends: [
+      '{{repeat(3)}}',
+      {
+        id: '{{index()}}',
+        name: '{{firstName()}} {{surname()}}'
+      }
+    ],
+    greeting: function (tags) {
+      return 'Hello, ' + this.name + 'Name: ' + tags.integer(1, 10) + 'Msg :Welcome Back %name% .';
+    },
+    favoriteFruit: function (tags) {
+      var fruits = ['apple', 'banana', 'strawberry'];
+      return fruits[tags.integer(0, fruits.length - 1)];
+    }
+  }
+]
+/tellraw @p [Message]
+/tellraw @p %s
+/tellraw @p [server]
+/execute @a ~ ~ ~ tellraw @p [Control Moves w,a,s,d]
+/execute @a ~ ~ ~ tellraw @p %s
+/title @a title %s
+/title @a title [ReSorces numb]
+/title @a subtitle [numb]
+/title @a subtitle %s
+/give @p sign 100000000000000000000 0 {BlockEntityTag:{[],id:"all items"}}
+/give @p sign 100000000000000000000 0 {BlockEntityTag:{%s,id:"all items"}}
+/blockdata [x] [y] [z] {%s}
+/blockdata [x] [y] [z] {[allitems]}
+/give @p written_book 100 0 {pages:[text],title:Book,author:TellrawGenerator}
+/give @p written_book 100 0 {pages:%s,title:Book,author:TellrawGenerator}
+{"command":"/execute @a ~ ~ ~ tellraw @p %s","jobject":[{"text":"Hack.jsnumb.jsfo\nSome initial "},{"text":"bold","bold":true},{"text":" text\n"}],"jtemplate":"execute_tellraw"}

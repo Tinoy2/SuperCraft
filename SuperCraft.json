@@ -63,10 +63,19 @@
 /title @a title [ReSorces numb]
 /title @a subtitle [numb]
 /title @a subtitle %s
-/give @p sign 100000000000000000000 0 {BlockEntityTag:{[],id:"all items"}}
-/give @p sign 100000000000000000000 0 {BlockEntityTag:{%s,id:"all items"}}
+/give @p all 100000000000000000000 0 {BlockEntityTag:{[],id:"all items"}}
+/give @p all 100000000000000000000 0 {BlockEntityTag:{%s,id:"all items"}}
 /blockdata [x] [y] [z] {%s}
 /blockdata [x] [y] [z] {[allitems]}
 /give @p written_book 100 0 {pages:[text],title:Book,author:TellrawGenerator}
 /give @p written_book 100 0 {pages:%s,title:Book,author:TellrawGenerator}
 {"command":"/execute @a ~ ~ ~ tellraw @p %s","jobject":[{"text":"Hack.jsnumb.jsfo\nSome initial "},{"text":"bold","bold":true},{"text":" text\n"}],"jtemplate":"execute_tellraw"}
+/IF_DATA_IS_TRUEMENT @p datanumb_register %s @a → if object is right
+set /@p data=numb %deploy%
+{"command":databaseTrue"/execute @a ~ ~ ~ Set @a FireRought"//hackinfo\\
+/dir
+//chat:::::::::::::::::::::::::\\
+"WELCOME!"
+DIR DATA FRAME CHAT
+/////////////////////////SPEEEDCHAT:10\\\\\\\\\\\\\\\\\\\\\\\\\\\
+"DATFRAME"

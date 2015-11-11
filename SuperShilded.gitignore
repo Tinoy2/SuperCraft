@@ -14,3 +14,8 @@ test_gen
 test_gen.caches
 TEST-*.xml
 junit*.properties
+
+#Generate 3 world
+Data_speed
+numb_data
+My_Data.data
